@@ -10,7 +10,7 @@ export const Card = (props) => {
 
   const fetchProject = async () => {
     const response = await fetch(
-      `http://127.0.0.1:8000/api/projects/${props.project.id}`
+      `https://server-sherinmediana.herokuapp.com/api/projects/${props.project.id}`
     );
     setProject({
       project: await response.json(),
@@ -41,7 +41,7 @@ export const Card = (props) => {
       showCancelButton: true,
     });
     if (text) {
-      const response = await fetch(`http://127.0.0.1:8000/api/comments`, {
+      const response = await fetch(`https://server-sherinmediana.herokuapp.com/api/comments`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
